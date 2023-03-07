@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <NavBar/>
-      <ItemListContainer greeting={"bienvenido a Cases"} />
+      <ItemListContainer greeting={"El mas confiable para el cuidado de tus herramientas"} />
     
     
     </>

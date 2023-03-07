@@ -1,0 +1,19 @@
+{
+    "fundas-airpods-max": [
+        {
+           "nombre":"Airpods Leather Terra",
+           "precio":"10.360",
+           "imagen":"https://cdn.shopify.com/s/files/1/0340/2190/0332/products/AIRPODPROTERRA-01_800x.jpg?v=1637000121",
+           "imagen2":"https://cdn.shopify.com/s/files/1/0340/2190/0332/products/LifeStyle_Agosto_020_800x.jpg?v=1662639925",
+           "descripcion":"A la medida de tus Airpods. Desde su diseño hasta la costura final, la serie Leather en cuero genuino fue creada para darle a tus AirPods un aspecto refinado y atemporal. Elaborada a mano con cuero de la mas alta calidad disponible, cada pieza desarrolla una pátina suave y rústica que la embellece aún más con el paso del tiempo. Su aroma único, la textura y el maridaje con tu iPhone harán de tu nuevo estuche un complemento natural para tus Airpods."
+        },
+
+           {
+           "nombre":"Aipords Leather Bosco ",
+           "precio":"10.360",
+           "imagen":"https://cdn.shopify.com/s/files/1/0340/2190/0332/products/AIRPODPROBOSCO-01_800x.jpg?v=1637000064",
+           "imagen2":"https://cdn.shopify.com/s/files/1/0340/2190/0332/products/LifeStyle_Agosto_06_800x.jpg?v=1645539000",
+           "descripcion":"A la medida de tus Airpods. Desde su diseño hasta la costura final, la serie Leather en cuero genuino fue creada para darle a tus AirPods un aspecto refinado y atemporal. Elaborada a mano con cuero de la mas alta calidad disponible, cada pieza desarrolla una pátina suave y rústica que la embellece aún más con el paso del tiempo. Su aroma único, la textura y el maridaje con tu iPhone harán de tu nuevo estuche un complemento natural para tus Airpods."
+       }
+    ]
+}

@@ -2,8 +2,8 @@
 
 const ItemListContainer = ({greeting}) => {
     return (
-       <section>
-        <p> {greeting} </p>
+       <section className="section-greeting">
+        <p className="p-greeting"> {greeting} </p>
        </section>
     );
 }

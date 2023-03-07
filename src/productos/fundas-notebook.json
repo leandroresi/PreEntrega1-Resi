@@ -1,0 +1,19 @@
+{
+    "fundas-notebook": [
+        {
+           "nombre":"Funda Notebook + Bolso Tech Bosco",
+           "precio":"44.370",
+           "imagen":"https://cdn.shopify.com/s/files/1/0340/2190/0332/products/01-COMBINADABOSCO_800x.jpg?v=1649091939",
+           "imagen2":"https://cdn.shopify.com/s/files/1/0340/2190/0332/products/04-SLEEVEBOSCOMAC_0bbaf160-af50-4ba7-8c75-d87e3c6f9fd1_800x.jpg?v=1649093156",
+           "descripcion":"Transformá tu vida cotidiana con la protección definitiva para tus accesorios. La dupla que conforman nuestra funda para laptops y el bolso tech tienen el poder de organizar tus esenciales de la manera más eficaz y con el estilo que sólo los materiales nobles pueden ofrecer. Ambos productos están elaborados con cuero genuino curtido al vegetal de la más alta calidad, que con el paso del tiempo desarrollan una pátina suave y rústica que sólo los embellece aún más. Diseñamos este combo como un complemento ideal para transportar tus esenciales todos los días, sin dejar de mantenerlos bien organizados."
+        },
+
+           {
+           "nombre":"Funda Notebook ",
+           "precio":"27.500",
+           "imagen":"https://cdn.shopify.com/s/files/1/0340/2190/0332/products/01-SLEEVETERRAMAC_800x.jpg?v=1646317223",
+           "imagen2":"https://cdn.shopify.com/s/files/1/0340/2190/0332/products/04-SLEEVETERRAMAC_800x.jpg?v=1662641846",
+           "descripcion":"Diseñamos una funda con costuras reforzadas para mantener tu laptop segura en el interior sin importar donde la lleves. Estas piezas desarrollan una pátina rústica que infunden un carácter personal y distintivo, para volverse aún más hermosas con el paso del tiempo."
+       }
+    ]
+}
