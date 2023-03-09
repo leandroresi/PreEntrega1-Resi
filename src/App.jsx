@@ -1,18 +1,37 @@
 import './App.css'
-import ItemListContainer from './components/containers/ItemListContainer';
+import ItemDetailContainer from './components/containers/itemdetailcontainer/itemDetailContainer';
+import ItemListContainer from './components/containers/itemlistcontainer/ItemListContainer';
 import NavBar from './components/NavBar';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+
 
 function App() {
 
   return (
-    <>
-      <NavBar/>
-      <ItemListContainer greeting={"El mas confiable para el cuidado de tus herramientas"} />
     
+      <div>
+        <NavBar/>
+        <BrowserRouter>
+
+        <Routes>
     
-    </>
+         <Route path='/'element={<ItemListContainer greeting={"Productos"} /> } />;
+      
+
+         <Route path='/dettalebilleteras/:idBilletera' element={<ItemDetailContainer/> } />;
+
+
+
+        </Routes>
+
     
-  )
+        </BrowserRouter>
+       
+
+      
+      </div>
+    
+  ); 
 }
 
 export default App;
