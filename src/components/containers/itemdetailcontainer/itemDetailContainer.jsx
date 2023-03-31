@@ -1,6 +1,5 @@
-import { useParams } from "react-router-dom";
-import React from "react";
-
+import { useState, useEffect } from "react";
+import ItemDetail from "../../../../../Tecnorojo-ReactJS/src/components/ItemDetail";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import {doc, getDoc, collection} from "firebase/firestore";
@@ -20,7 +19,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db= getFirestore(app)
 
-
+/*
 async function getProduct(idItem){
 
   const coleccionProducts = collection(db,"productos");
@@ -29,50 +28,24 @@ async function getProduct(idItem){
   const snapshotDocs = await getDoc(docRec)
   return {... snapshotDocs.data(), id:snapshotDocs.id}
 }
+*/
 
-
-
-
-function ItemDetailContainer () {
-
-    const params = useParams();
-  const idBilletera = params.idBilletera;
-
-
-
- /* const [billetera,setBilletera] = useState([]);
-
-
-
+const ItemDetailContainer = () => {
+  const [data, setData] = useState([]);
   useEffect(() => {
-    fetch(billeteras)
-    .then ((res) => {
-       res.json();
-    })
-    .then((json) => {
-      setBilletera(json);
-    })
+    const db = getFirestore();
+    const billeterasCollection = collection(db, "billeteras");
+    getDocs(billeterasCollection).then((querySnapshot) => {
+      const billeteras = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      setData(billeteras);
+    });
   }, []);
-  console.log(billeteras)
 
-  return (
-    <>
-      <div>
-        {billetera.map((billetera) =>(
-          <div key={billetera.id} className="card" style={{width: "18rem"}}>
-            <img src={billetera.imagen} classname="card-img-top" alt="..."/>
-            <div className="card-body">
-              <h3 className="card-title">{billetera.nombre}</h3>
-              <p className="card-text">{billetera.descripcion} </p>
-              <p className="card-text">{billetera.precio} </p>
-              <button href="#" classname="btn btn-primary">Agregar Al Carrito</button>
-            </div>
-          </div>
-        ))}
-      </div>
-    </>
-  ); */
-}
+  return <ItemDetail billeteras={data} />;
+};
 
 
 export default  ItemDetailContainer
