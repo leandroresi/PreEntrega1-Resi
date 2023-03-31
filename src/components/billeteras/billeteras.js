@@ -1,4 +1,4 @@
-const billeteras = [
+ const billeteras = [
     
         {  "id":1,
            "nombre":"Tarjetero Zipper Terra",

@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function itemList({billetera}) {
+export default function itemList({billetera}) {
   return (
      <div>
         {billetera.map((billetera) =>(
@@ -21,4 +22,3 @@ function itemList({billetera}) {
   )
 }
 
-export default itemList

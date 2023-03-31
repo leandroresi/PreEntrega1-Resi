@@ -1,3 +1,4 @@
+import React from "react";
 import CartWidget from "./CartWidget";
 import {Link} from "react-router-dom";
 
@@ -13,11 +14,7 @@ const NavBar = () => {
             <ul className="ul-navbar">
                 <li className="li-navbar" > <Link to="/billeteras" className="link-navbar">Billeteras</Link> </li>
 
-                <li className="li-navbar" > <Link to="/Fundas" className="link-navbar"  >Fundas</Link> </li>
-
-                <li className="li-navbar" > <Link to="/Clientes"  className="link-navbar" >Clientes</Link> </li>
-
-                <li className="li-navbar" > <Link to="/Mas Informacion" className="link-navbar" >Mas Informacion</Link> </li>
+                <li className="li-navbar" > <Link to="{'/Acerca De Nosotros/${} '}" className="link-navbar" >Acerca De Nosotros</Link> </li>
             </ul>
 
             

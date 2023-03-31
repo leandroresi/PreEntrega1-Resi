@@ -1,22 +1,59 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import billeteras from '../../billeteras/billeteras';
-function ItemDetailContainer () {
-  const [billetera,setBilletera] = useState([]);
+import React from "react";
 
-  const params = useParams();
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import {doc, getDoc, collection} from "firebase/firestore";
+
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAjdRv--D7ljTd8xWroDVrIu8AgwFRmFuI",
+  authDomain: "walden-5e5bb.firebaseapp.com",
+  projectId: "walden-5e5bb",
+  storageBucket: "walden-5e5bb.appspot.com",
+  messagingSenderId: "171752940154",
+  appId: "1:171752940154:web:93f574160d06bfd497d1c3"
+};
+
+// Import firebase
+const app = initializeApp(firebaseConfig);
+const db= getFirestore(app)
+
+
+async function getProduct(idItem){
+
+  const coleccionProducts = collection(db,"productos");
+  const docRec = doc(coleccionProducts,idItem);
+
+  const snapshotDocs = await getDoc(docRec)
+  return {... snapshotDocs.data(), id:snapshotDocs.id}
+}
+
+
+
+
+function ItemDetailContainer () {
+
+    const params = useParams();
   const idBilletera = params.idBilletera;
 
 
 
+ /* const [billetera,setBilletera] = useState([]);
+
+
+
   useEffect(() => {
-    fetch({billeteras}).then ((res) => {
-      return res.json();
+    fetch(billeteras)
+    .then ((res) => {
+       res.json();
     })
     .then((json) => {
-      setBilletera(json.data);
+      setBilletera(json);
     })
   }, []);
+  console.log(billeteras)
 
   return (
     <>
@@ -34,7 +71,7 @@ function ItemDetailContainer () {
         ))}
       </div>
     </>
-  ); 
+  ); */
 }
 
 
