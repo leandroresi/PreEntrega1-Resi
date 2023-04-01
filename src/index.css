@@ -26,11 +26,13 @@
 .div-navbar{
  position: absolute;
  width: 100%;
+ height: 150px;
  top: 0;
  left: 0;
  display: flex;
  justify-content: space-between;
  align-items: center;
+ z-index: 2;
 background-color: var(--color-detalles2)
  
  
@@ -73,4 +75,95 @@ background-color: var(--color-detalles2)
 .carrito-imagen{
     width: 65px;
     
+}
+
+/* home*/
+
+.container{
+  position: absolute;
+  margin-top:-25% ;
+  margin-left: 25%;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  
+}
+
+.info-empresa{
+  font-size: 25px;
+  width: 800px;
+  color: var(--color-texto);
+}
+
+/*Mas INformacion*/
+
+
+.mas-info{
+  margin: 10% 20%;
+}
+
+.mas-info-h3{
+  font-size: 50px;
+  font-family: var(--tipografia-titulos);
+
+}
+
+.pedidos, .cambios{
+  margin:10%;
+ 
+}
+
+.tittles-h3{
+  font-size: 50px;
+  font-family: var(--tipografia-titulos);
+}
+
+.texto-tittle{
+  
+  font-size: 25px;
+}
+
+
+/*formulario*/
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 10% 65%;
+
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #555;
+}
+
+button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #555;
 }

@@ -1,7 +1,11 @@
+import Formulario from "../Formulario/Formulario"
+
 const Cart = () => {
+
+  
   return (
     <>
-    /* carrito detalle */
+   <Formulario/>
     </>
   );
 };

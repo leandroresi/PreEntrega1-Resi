@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { collection, getFirestore, addDoc } from "firebase/firestore";
 function Formulario() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -8,12 +8,30 @@ function Formulario() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (name === "" || email === "") {
+      alert("No pueden existir campos vacios");
+    } 
+     else {
+      addDoc(ordersCollection, order).then(({ id }) => setOrderId(id));
+    }
+    
     console.log(`Name: ${name}, Email: ${email}, Descripcion: ${descripcion}`);
     setName("");
     setEmail("");
     setDescripcion("");
     setDireccion("");  
 }
+
+
+  const db = getFirestore();
+  const ordersCollection = collection(db, "orden");
+
+  const order = {
+    name,
+    email,
+    direccion,
+    descripcion,
+  };
 
   return (
     <form onSubmit={handleSubmit}>
