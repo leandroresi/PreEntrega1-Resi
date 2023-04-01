@@ -22,13 +22,12 @@ const itemDetail = ({billeteras}) => {
     });
   }, []);
 
-  const billeteraFilter = billeteras.filter((billetera) => billetera.id == id);
 
   return (
     <>
       {billeteraFilter.map((billetera) => (
         
-        <div>
+        <div key={billetera.id}>
           <img src="{billetera.imagen} " alt="{billetera.nombre} " />
           <div>
             <h2> {billetera.nombre} </h2>

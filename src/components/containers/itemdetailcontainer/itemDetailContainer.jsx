@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import itemDetail from "../itemDetail/itemDetail";
+import ItemDetail from "../ItemDetail/ItemDetail";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import {doc, getDoc, collection} from "firebase/firestore";
+import {getDocs, collection} from "firebase/firestore";
 
 
 // Your web app's Firebase configuration
@@ -14,9 +14,9 @@ const firebaseConfig = {
   messagingSenderId: "171752940154",
   appId: "1:171752940154:web:93f574160d06bfd497d1c3"
 };
-// Import firebase
+// Import firebase 
 const app = initializeApp(firebaseConfig);
-const db= getFirestore(app)
+const db= getFirestore(app) 
 
 
 const ItemDetailContainer = () => {
@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     const db = getFirestore();
     const billeterasCollection = collection(db, "billeteras");
-    getDoc(billeterasCollection).then((querySnapshot) => {
+    getDocs(billeterasCollection).then((querySnapshot) => {
       const billeteras = querySnapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
@@ -33,11 +33,10 @@ const ItemDetailContainer = () => {
     });
   }, []);
 
-  return <itemDetail billeteras={data}/>;
-  
-  
-  
-  /* <ItemDetail billeteras={data} />; */
+  return(
+    <ItemDetail billeteras={data} />
+  );
+
 };
 
 

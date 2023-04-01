@@ -1,8 +1,8 @@
 :root {
   --color-texto: #FFFFFF;
   --color-texto2: #000000;
-  --color-detalles: #1c1b1b;
-  --color-detalles2: #6a6a6a;
+  --color-detalles: #1c1b1b2f;
+  --color-detalles2: #6a6a6a6d;
   --color-detalles-unicos: #790000;
   --tipografia-titulos: 'Playfair Display', serif; 
   --tipografia-texto:'Open Sans', sans-serif;
@@ -21,22 +21,6 @@
 
 }
 
-/* Greeting */
-
-.section-greeting{
-  position:absolute;
-  top: 40%;
-  left: 28%;
-  width: 700px;
-}
-
-.p-greeting{
-font-size: 3em;
-color: var(--color-texto);
-font-family: var(--tipografia-titulos);
-}
-
-
 /* NavBar*/
 
 .div-navbar{
@@ -47,7 +31,7 @@ font-family: var(--tipografia-titulos);
  display: flex;
  justify-content: space-between;
  align-items: center;
-;
+background-color: var(--color-detalles2)
  
  
 }

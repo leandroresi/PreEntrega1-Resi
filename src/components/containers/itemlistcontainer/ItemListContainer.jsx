@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
-import React from "react";
+import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
-
-
+import { useParams } from "react-router-dom";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
@@ -23,54 +21,29 @@ const app = initializeApp(firebaseConfig);
 const db= getFirestore(app)
 
 
-async function getProductFromFirebase() {
-
-  const coleccionProducts = collection(db,"productos");
-  let snapshotProductos = await getDocs(coleccionProducts);
-  const docs = snapshotProductos.docs;
-  
-  const productosData = docs.map((documentos) =>{
-    const producto = documentos.data();
-    producto.id = documentos.id;
-    return producto;
-  });
-  return productosData;
-
-
-}
-
-
-
 
 function ItemListContainer () {
-/*  const [billetera,setBilletera] = useState([]);
+
+const [billeteras, setBilleteras] = useState ([]);
 
   useEffect(() => {
-    fetch(billeteras)
-    .then ((res) => {
-       res.json();
-    })
-    .then((json) => {
-      setBilletera(json);
-    })
+    const db = getFirestore();
+    const billeterasCollection = collection(db, "billeteras");
+    getDocs(billeterasCollection).then((querySnapshot) => {
+      const billeteras = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      setBilleteras(billeteras);
+    });
   }, []);
-  console.log(billeteras)
 
-  return (
-    <>
-        <div>
-        {billetera.map((billetera) =>(
-          <div key={billetera.id} className="card" style={{width: "18rem"}}>
-            <img src={billetera.imagen} classname="card-img-top" alt="..."/>
-            <div className="card-body">
-              <h3 className="card-title">{billetera.nombre}</h3>
-              <p className="card-text">{billetera.precio} </p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </>
-  ); */
+   return(
+    <div>
+      <itemList billeteras= {billeteras} />
+    </div>
+   )
+
 }
 
 export default  ItemListContainer
