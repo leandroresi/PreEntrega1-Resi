@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ItemDetail from "../../../../../Tecnorojo-ReactJS/src/components/ItemDetail";
+import itemDetail from "../itemDetail/itemDetail";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import {doc, getDoc, collection} from "firebase/firestore";
@@ -14,28 +14,17 @@ const firebaseConfig = {
   messagingSenderId: "171752940154",
   appId: "1:171752940154:web:93f574160d06bfd497d1c3"
 };
-
 // Import firebase
 const app = initializeApp(firebaseConfig);
 const db= getFirestore(app)
 
-/*
-async function getProduct(idItem){
-
-  const coleccionProducts = collection(db,"productos");
-  const docRec = doc(coleccionProducts,idItem);
-
-  const snapshotDocs = await getDoc(docRec)
-  return {... snapshotDocs.data(), id:snapshotDocs.id}
-}
-*/
 
 const ItemDetailContainer = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     const db = getFirestore();
     const billeterasCollection = collection(db, "billeteras");
-    getDocs(billeterasCollection).then((querySnapshot) => {
+    getDoc(billeterasCollection).then((querySnapshot) => {
       const billeteras = querySnapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
@@ -44,7 +33,11 @@ const ItemDetailContainer = () => {
     });
   }, []);
 
-  return <ItemDetail billeteras={data} />;
+  return <itemDetail billeteras={data}/>;
+  
+  
+  
+  /* <ItemDetail billeteras={data} />; */
 };
 
 

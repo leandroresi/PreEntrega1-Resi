@@ -37,27 +37,7 @@ const itemDetail = ({billeteras}) => {
             <button> Agregar al carrito</button>
           </div>
         </div>
-
-      /*  <div key={billetera.id}>
-          <Center p="1rem">
-            <Card className="prod-detail">
-              <CardBody>
-                <Image borderRadius="lg" src={billetera.imagen} />
-                <Stack mt="6" spacing="3">
-                  <Heading size="md">{billetera.nombre}</Heading>
-                  <Text color="blue.800" fontSize="l">
-                    Descripcion: {billetera.descripcion}
-                  </Text>
-          
-                  <Text color="green.400" fontSize="xl">
-                    Precio: ${billetera.precio}
-                  </Text>
-                </Stack>
-              </CardBody>
-            </Card>
-          </Center>
-        </div>
-      */ ))}
+ ))}
     </>
   );
 };
